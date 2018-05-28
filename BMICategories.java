@@ -5,10 +5,20 @@ public class BMICategories
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
-        double bmi;
+        double m, kg, bmi, ft, in, lbs, ht;
 
-        System.out.print("Enter your BMI: ");
-        bmi = input.nextDouble();
+        System.out.print("Your height (feet only): ");
+        ft = input.nextDouble();
+        System.out.print("Your height (inches): ");
+        in = input.nextDouble();
+        System.out.print("Your weight in pounds: ");
+        lbs = input.nextDouble();
+
+        ht = (ft*12)+ in;
+        m = ht*.0254;
+        kg = lbs*.453592;
+        bmi = kg/(m*m);
+        System.out.println("Your BMI is " + bmi);
 
         System.out.print("BMI Category: ");
         if (bmi < 15.0)
